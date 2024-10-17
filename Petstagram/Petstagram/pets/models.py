@@ -2,7 +2,7 @@ from django.db import models
 from django.utils.text import slugify
 
 
-class Pets(models.Model):
+class Pet(models.Model):
     name = models.CharField(
         max_length=30,
     )
@@ -21,6 +21,7 @@ class Pets(models.Model):
     )
 
     def save(self, *args, **kwargs):
+        super().save(self, *args, **kwargs)
         if not self.slug:
             self.slug = slugify(f'{self.name}-{self.id}')
             super().save(self, *args, **kwargs)
