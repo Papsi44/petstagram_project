@@ -6,7 +6,7 @@ def login(request):
 
 
 def register(request):
-    return render(request, 'accounts/register-page.html')
+    return render(request, 'accounts/../../templates/common/../../templates/accounts/register-page.html')
 
 
 def profile_delete(request, pk: int):
